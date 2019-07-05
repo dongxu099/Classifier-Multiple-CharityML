@@ -13844,7 +13844,6 @@ Percentage of individuals making more than $50,000: 24.78439697492371%
 <span class="c1"># TODO: Encode the &#39;income_raw&#39; data to numerical values</span>
 <span class="n">income</span> <span class="o">=</span> <span class="n">income_raw</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="s1">&#39;&lt;=50K&#39;</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c1"># income = (income_raw == &quot;&gt;50K&quot;).astype(np.uint8)</span>
-
 <span class="c1"># When we have lots of possible output labels</span>
 <span class="c1">#encoder = LabelEncoder()</span>
 <span class="c1">#income = encoder.fit_transform(income_raw)</span>
@@ -14443,7 +14442,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The gradient boosting (tree) method first fit the data with a simple tree model and obtain each data point' error. Then later tree models particularly focus on fitting those large-error-data-points. Last, all tree models are combined by giving some weights.</strong></p>
+<p><strong>Answer: The gradient boosting tree (GBT) method is an ensemle learner that combines multiple weak learners (e.g., decision trees) together to come up with predictions. These simple decision trees recursively split the data into two via various combination of features and thresholds, such that the "purity" of the subpartions is maximized. They are slightly better than random chance, while takes very less time to train and predict.  First the GBT method fits the data with a simple tree model and obtain each data point' error. Then later tree models particularly focus on fitting those large-error-data-points. Last, all tree models are combined by giving some weights.</strong></p>
 
 </div>
 </div>
